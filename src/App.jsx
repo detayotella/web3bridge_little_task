@@ -2,7 +2,7 @@ import { useState } from "react";
 import abi from "./abi.json";
 import { ethers } from "ethers";
 
-const contractAddress =  import.meta.env.VITE_CONTRACT_ADDRESS;
+const contractAddress =  "0xd9145CCE52D386f254917e481eB44e9943F39138";
 
 function App() {
   const [text, setText] = useState("");

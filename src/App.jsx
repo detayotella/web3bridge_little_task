@@ -6,7 +6,8 @@ const contractAddress =  "0xDC55235fbA58deCD447b932FAef0f35D6A65aa89";
 
 function App() {
   const [text, setText] = useState("");
-  const [errorMessage, setErrorMessage] = useState(''); 
+  const [displayMessage, getTheMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(""); 
 
   async function requestAccount() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -44,8 +45,8 @@ function App() {
       const contract = new ethers.Contract(contractAddress, abi, provider);
 
       const message = await contract.getMessage();
-      console.log("Current message:", message);
-      setText(message); 
+      //console.log("Current message:", message);
+      getTheMessage(message); 
     } else {
       setErrorMessage("MetaMask not found. Please install MetaMask to use this application.");
     }
